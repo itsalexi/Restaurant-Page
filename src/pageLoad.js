@@ -2,6 +2,7 @@
 // For main-content, when buttons at the top are clicked
 // Clear main-content
 // Call the tab function (Home, Menu, About)
+
 // Generate the content for each tab
 const container = document.getElementById("content");
 
@@ -52,5 +53,9 @@ function renderMain() {
   container.append(maincontent);
 }
 
+function resetMain() {
+  const main = document.querySelector(".main-content");
+  main.innerHTML = "";
+}
 
-export { renderHeader, renderFooter, renderMain };
+export { renderHeader, renderFooter, renderMain, resetMain };
