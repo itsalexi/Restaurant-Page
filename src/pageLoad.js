@@ -19,6 +19,14 @@ function renderHeader() {
   const menuItem = document.createElement("li");
   const aboutItem = document.createElement("li");
 
+  homeItem.classList.add("headerItem");
+  menuItem.classList.add("headerItem");
+  aboutItem.classList.add("headerItem");
+
+  homeItem.setAttribute("id", "home");
+  menuItem.setAttribute("id", "menu");
+  aboutItem.setAttribute("id", "about");
+
   headerList.appendChild(homeItem);
   headerList.appendChild(menuItem);
   headerList.appendChild(aboutItem);

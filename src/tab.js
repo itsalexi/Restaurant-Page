@@ -8,7 +8,7 @@
 //   tab.classList.add("tab");
 //   main_content.appendChild(tab);
 // }
-import { createFood, menuItem } from "./menu.js";
+import { menuItem } from "./menu.js";
 
 function renderHomeTab() {
   const tab = document.querySelector(".tab");
@@ -19,19 +19,6 @@ function renderMenuTab() {
   const menu = document.createElement("div");
   menu.classList.add("menu");
   main_content.appendChild(menu);
-
-  createFood("Hamburger", "10", "It's a hamburger, deal with it.");
-  createFood(
-    "Tempura",
-    "10",
-    "Tempura is good, buy it! It's a great food item."
-  );
-  createFood(
-    "Steak",
-    "10",
-    "Good steak, good meats, cooked in any style you want."
-  );
-  createFood("Tonkatsu", "10", "Tonkatsu, no need to explain, its good food.");
 
   for (let item in menuItem) {
     createItem(menuItem[item].name, menuItem[item].price, menuItem[item].desc);
