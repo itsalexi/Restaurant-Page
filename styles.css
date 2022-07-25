@@ -41,7 +41,8 @@ body {
 
 .header li:hover {
   border-bottom: 3px solid #22d3ee;
-  text-shadow: 0px 1px 3px yellow;
+  box-shadow: 0 0.5em 0.5em -0.5em cyan;
+  transform: translateY(-0.1em);
 }
 
 .main-content {
@@ -102,6 +103,7 @@ textarea {
   color: white;
   font-weight: bold;
 }
+
 .homeTitle {
   font-size: 5em;
   color: cyan;
@@ -121,7 +123,8 @@ textarea {
   font-size: 1.25em;
 }
 
-.homeOrder:hover {
+.homeOrder:hover,
+#contactBtn:hover {
   box-shadow: 0 0.5em 0.5em -0.4em cyan;
   transform: translateY(-0.25em);
 }
