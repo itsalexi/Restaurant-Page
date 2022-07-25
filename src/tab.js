@@ -9,9 +9,30 @@
 //   main_content.appendChild(tab);
 // }
 import { menuItem } from "./menu.js";
+import { resetMain } from "./index.js";
 
 function renderHomeTab() {
-  const tab = document.querySelector(".tab");
+  const main_content = document.querySelector(".main-content");
+
+  const title = document.createElement("h1");
+  title.classList.add("homeTitle");
+  const tagline = document.createElement("p");
+  tagline.classList.add("homeTagline");
+  const orderBtn = document.createElement("button");
+  orderBtn.classList.add("homeOrder");
+
+  orderBtn.addEventListener("click", () => {
+    resetMain();
+    renderMenuTab();
+  });
+
+  const container = document.createElement("div");
+  container.classList.add("container");
+  container.append(title, tagline, orderBtn);
+  main_content.appendChild(container);
+  title.textContent = "Restaurant";
+  tagline.textContent = "The greatest restaurant there ever is.";
+  orderBtn.textContent = "Order Now";
 }
 
 function renderMenuTab() {

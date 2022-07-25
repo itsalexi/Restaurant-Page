@@ -5,12 +5,7 @@ import {
   resetMain,
 } from "./pageLoad.js";
 
-import {
-  renderHomeTab,
-  renderMenuTab,
-  renderAboutTab,
-  renderTab,
-} from "./tab.js";
+import { renderHomeTab, renderMenuTab, renderAboutTab } from "./tab.js";
 
 import { createFood } from "./menu.js";
 
@@ -27,6 +22,7 @@ createFood("Tonkatsu", "10", "Tonkatsu, no need to explain, its good food.");
 renderHeader();
 renderMain();
 renderFooter();
+renderHomeTab();
 
 // resetMain();
 const headerItems = document.querySelectorAll(".headerItem");
@@ -36,6 +32,7 @@ headerItems.forEach((item) => {
     switch (event.target.id) {
       case "home":
         resetMain();
+        renderHomeTab();
         break;
       case "menu":
         resetMain();
@@ -43,10 +40,12 @@ headerItems.forEach((item) => {
         break;
       case "about":
         resetMain();
+        renderAboutTab();
         break;
     }
   });
 });
 
+export { resetMain };
 // When switching tabs, call the resetMain() function to reset main-content div
 // Then call the tab function of whatever the person pressed on.
