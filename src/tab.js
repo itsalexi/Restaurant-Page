@@ -1,13 +1,3 @@
-// TODO
-// Create the layout for each Tab
-// Home Tab
-// Menu Tab
-// About Tab
-// function renderTab() {
-//   const tab = document.createElement("div");
-//   tab.classList.add("tab");
-//   main_content.appendChild(tab);
-// }
 import { menuItem } from "./menu.js";
 import { resetMain } from "./index.js";
 
@@ -84,7 +74,40 @@ function createItem(name, price, desc) {
 }
 
 function renderAboutTab() {
-  const tab = document.querySelector(".tab");
+  const contact = document.createElement("div");
+  const main_content = document.querySelector(".main-content");
+  contact.classList.add("contact");
+
+  const contactTitle = document.createElement("p");
+  const contactForm = document.createElement("form");
+  const contactName = document.createElement("input");
+  const contactEmail = document.createElement("input");
+  const contactMessage = document.createElement("textarea");
+  const contactBtn = document.createElement("input");
+  contactBtn.id = "contactBtn";
+
+  contactName.setAttribute("type", "text");
+  contactEmail.setAttribute("type", "email");
+  contactBtn.setAttribute("type", "submit");
+  contactMessage.setAttribute("rows", "8");
+  contactMessage.setAttribute("cols", "50");
+  contactName.setAttribute("placeholder", "Name");
+  contactEmail.setAttribute("placeholder", "Email");
+  contactMessage.setAttribute("placeholder", "Type your message here!");
+  contactName.required = true;
+  contactEmail.required = true;
+  contactMessage.required = true;
+  contactMessage.classList.add("messageInput");
+
+  contactTitle.textContent = "Contact us!";
+  contactTitle.classList.add("contactTitle");
+  contact.appendChild(contactTitle);
+  contactForm.appendChild(contactName);
+  contactForm.appendChild(contactEmail);
+  contactForm.appendChild(contactMessage);
+  contactForm.appendChild(contactBtn);
+  contact.appendChild(contactForm);
+  main_content.appendChild(contact);
 }
 
 export { renderHomeTab, renderMenuTab, renderAboutTab };
